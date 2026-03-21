@@ -17,7 +17,17 @@ function sumSalaries(salaries) {
 }
 console.log(sumSalaries(salaries));
 
-// function topEarner(salaries){
-//   const salaryArr = new Map(Object.entries(salaries));
-//   salaryArr.forEach((salary)=>)
-// }
+function topEarner(salaries) {
+  const salaryArr = new Map(Object.entries(salaries));
+  let topSalaryValue = 0;
+  let topEarner;
+  salaryArr.forEach((value, key) => {
+    if (value > topSalaryValue) {
+      topSalaryValue = value;
+      topEarner = key;
+    }
+  });
+  return topEarner;
+}
+
+console.log(topEarner(salaries));
